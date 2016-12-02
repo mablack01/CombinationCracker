@@ -11,6 +11,7 @@ import java.io.IOException;
  */
 public class Console {
 	
+	private static NumberPad pad = new NumberPad(5);
 	private static String fileLocation = "./data/input.txt";
 	
 	/**
@@ -41,10 +42,9 @@ public class Console {
 	}
 	
 	public static int processCommand(String line) {
-		NumberPad pad = new NumberPad();
-		for(char instr : line.toCharArray()) {
+		for(char instr : line.toCharArray())
 			pad.getNextNumber(instr);
-		}
+		pad = new NumberPad(pad.getNumber());
 		return pad.getNumber();
 	}
 
