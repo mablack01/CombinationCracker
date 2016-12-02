@@ -41,7 +41,11 @@ public class Console {
 	}
 	
 	public static int processCommand(String line) {
-		return -1;
+		NumberPad pad = new NumberPad();
+		for(char instr : line.toCharArray()) {
+			pad.getNextNumber(instr);
+		}
+		return pad.getNumber();
 	}
 
 }
