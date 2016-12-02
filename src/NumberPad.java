@@ -1,13 +1,28 @@
 
 public class NumberPad {
 	
-	private int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+	/**
+	 * Fields required by the number pad
+	 * number represents the current number status
+	 * numbers refers to the array of numbers for navigation
+	 */
 	private int number;
+	private int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 	
+	/**
+	 * Constructor to indicate the start number.
+	 * @param number The indicated start number.
+	 */
 	public NumberPad(int number) {
 		this.number = number;
 	}
 	
+	/**
+	 * Navigates through the array of numbers and finds 
+	 * the new number based on the given command.
+	 * @param cmd The command given to navigate.
+	 * @return The number based off of the command given.
+	 */
 	public int getNextNumber(char cmd) {
 		switch(cmd) {
 		case 'U':
@@ -34,6 +49,10 @@ public class NumberPad {
 		return number;
 	}
 	
+	/**
+	 * Indicates the current number on the pad.
+	 * @return The current number.
+	 */
 	public int getNumber() {
 		return number;
 	}

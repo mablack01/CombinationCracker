@@ -11,6 +11,9 @@ import java.io.IOException;
  */
 public class Console {
 	
+	/**
+	 * Fields for the console to run, default pad number is 5 (middle).
+	 */
 	private static NumberPad pad = new NumberPad(5);
 	private static String fileLocation = "./data/input.txt";
 	
@@ -41,6 +44,11 @@ public class Console {
         }
 	}
 	
+	/**
+	 * Processes the given commands to crack the code.
+	 * @param line The line of commands being parsed.
+	 * @return The single digit from the starting code following the commands.
+	 */
 	public static int processCommand(String line) {
 		for(char instr : line.toCharArray())
 			pad.getNextNumber(instr);
